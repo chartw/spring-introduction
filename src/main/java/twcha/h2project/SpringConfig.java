@@ -1,10 +1,15 @@
 package twcha.h2project;
 
+import org.apache.catalina.realm.DataSourceRealm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import twcha.h2project.repository.JdbcMemberRepository;
 import twcha.h2project.repository.MemberRepository;
 import twcha.h2project.repository.MemoryMemberRepository;
 import twcha.h2project.service.MemberService;
+
+import javax.sql.DataSource;
 
 /*
 * 원래 bean 자동 등록을 하면 편하지만,
@@ -14,13 +19,23 @@ import twcha.h2project.service.MemberService;
 @Configuration
 public class SpringConfig {
 
+    private DataSource dataSource;
+
+    @Autowired
+    public SpringConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     @Bean
     public MemberService memberService() {
+
         return new MemberService(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
+//        return new MemoryMemberRepository();
+//        기존 코드를 수정하지 않고, 구현체만 memory -> jdbc로 교체할수 있다.
+        return new JdbcMemberRepository(dataSource);
     }
 }
