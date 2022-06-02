@@ -1,10 +1,10 @@
 package twcha.h2project;
 
-import org.apache.catalina.realm.DataSourceRealm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import twcha.h2project.repository.JdbcMemberRepository;
+import twcha.h2project.repository.JdbcTemplateMemberRepository;
 import twcha.h2project.repository.MemberRepository;
 import twcha.h2project.repository.MemoryMemberRepository;
 import twcha.h2project.service.MemberService;
@@ -19,8 +19,9 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;
+    DataSource dataSource;
 
+//    dataSource Error 무시해도 됨.
     @Autowired
     public SpringConfig(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -34,8 +35,10 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
+
 //        return new MemoryMemberRepository();
-//        기존 코드를 수정하지 않고, 구현체만 memory -> jdbc로 교체할수 있다.
-        return new JdbcMemberRepository(dataSource);
+//        인터페이스를 활용하여 기존 코드를 변경하지 않고, db 교체 가능.
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }

@@ -1,7 +1,7 @@
 package twcha.h2project.service;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import twcha.h2project.domain.Member;
 import twcha.h2project.repository.MemoryMemberRepository;
@@ -10,12 +10,12 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
-    MemoryMemberRepository repository = new MemoryMemberRepository();
-    MemberService memberService = new MemberService(repository);
+    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemberService memberService = new MemberService(memberRepository);
 
     @AfterEach
     public void afterEach() {
-        repository.clearStore();
+        memberRepository.clearStore();
 
     }
 
@@ -46,6 +46,7 @@ class MemberServiceTest {
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member1));
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");
+//        아래 try catch보단 위의 방식으로 에러 캐치 및 테스트 하자.
 //        try {
 //            memberService.join(member2);
 //            fail();

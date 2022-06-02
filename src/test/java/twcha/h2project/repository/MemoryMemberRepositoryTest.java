@@ -27,8 +27,10 @@ class MemoryMemberRepositoryTest {
         repository.save(member);
 
         Member result = repository.findById(member.getId()).get();
+//      Alt + Enter -> Static import로 Assertoins. 생략
         assertThat(member).isEqualTo(result);
-        //Assertions.assertEquals(member, result);
+//        위의 api를 많이 쓴다.
+//        Assertions.assertEquals(member, result);
     }
 
     @Test
