@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import twcha.h2project.repository.JdbcMemberRepository;
+import twcha.h2project.repository.JdbcTemplateMemberRepository;
 import twcha.h2project.repository.MemberRepository;
 import twcha.h2project.repository.MemoryMemberRepository;
 import twcha.h2project.service.MemberService;
@@ -37,6 +38,7 @@ public class SpringConfig {
 
 //        return new MemoryMemberRepository();
 //        인터페이스를 활용하여 기존 코드를 변경하지 않고, db 교체 가능.
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
