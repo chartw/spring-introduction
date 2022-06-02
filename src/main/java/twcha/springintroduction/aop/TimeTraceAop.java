@@ -7,9 +7,8 @@
 
 Aop는 실제 서비스가 아닌, 프록시(가짜) 서비스를 호출하고, 그 이후 실제 서비스를 호출하는 방식.
  */
-package twcha.h2project.aop;
+package twcha.springintroduction.aop;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -23,7 +22,7 @@ public class TimeTraceAop {
 
     // twcha.h2project 패키지 하위 항목에 모두 적용
     // 원하는 관심사항 선택 가능. 클래스, 아규먼트... 등
-    @Around("execution(* twcha.h2project..*(..))")
+    @Around("execution(* twcha.springintroduction..*(..))")
     public Object excute(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         System.out.println("START: " + joinPoint.toString());

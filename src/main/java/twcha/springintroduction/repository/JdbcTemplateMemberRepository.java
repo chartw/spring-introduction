@@ -3,18 +3,15 @@ Jdbc Template은 Jdbc API의 반복코드를 대부분 제거해준다.
 하지만 SQL은 직접 작성해야한다.
  */
 
-package twcha.h2project.repository;
+package twcha.springintroduction.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import twcha.h2project.domain.Member;
+import twcha.springintroduction.domain.Member;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

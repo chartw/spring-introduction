@@ -1,12 +1,12 @@
-package twcha.h2project.controller;
+package twcha.springintroduction.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import twcha.h2project.domain.Member;
-import twcha.h2project.service.MemberService;
+import twcha.springintroduction.domain.Member;
+import twcha.springintroduction.service.MemberService;
 
 import java.util.List;
 

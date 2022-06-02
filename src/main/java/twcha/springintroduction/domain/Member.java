@@ -1,4 +1,4 @@
-package twcha.h2project.domain;
+package twcha.springintroduction.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

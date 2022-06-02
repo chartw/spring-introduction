@@ -1,10 +1,9 @@
-package twcha.h2project.service;
+package twcha.springintroduction.service;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import twcha.h2project.domain.Member;
-import twcha.h2project.repository.MemoryMemberRepository;
+import twcha.springintroduction.domain.Member;
+import twcha.springintroduction.repository.MemoryMemberRepository;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;

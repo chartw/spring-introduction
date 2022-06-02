@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'twcha.h2-project' is invalid and this project uses 'twcha.h2project' instead.
+* The original package name 'twcha.h2-project' is invalid and this project uses 'twcha.springintroduction' instead.
 
 # Getting Started
 

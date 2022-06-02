@@ -1,6 +1,6 @@
-package twcha.h2project.repository;
+package twcha.springintroduction.repository;
 
-import twcha.h2project.domain.Member;
+import twcha.springintroduction.domain.Member;
 
 import java.util.List;
 import java.util.Optional;

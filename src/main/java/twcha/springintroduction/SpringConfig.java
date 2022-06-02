@@ -1,14 +1,10 @@
-package twcha.h2project;
+package twcha.springintroduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import twcha.h2project.aop.TimeTraceAop;
-import twcha.h2project.repository.*;
-import twcha.h2project.service.MemberService;
-
-import javax.persistence.EntityManager;
-import javax.sql.DataSource;
+import twcha.springintroduction.repository.*;
+import twcha.springintroduction.service.MemberService;
 
 /*
 * 원래 bean 자동 등록을 하면 편하지만,

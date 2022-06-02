@@ -1,10 +1,7 @@
-package twcha.h2project.service;
+package twcha.springintroduction.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import twcha.h2project.domain.Member;
-import twcha.h2project.repository.MemberRepository;
-import twcha.h2project.repository.MemoryMemberRepository;
+import twcha.springintroduction.domain.Member;
+import twcha.springintroduction.repository.MemberRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;

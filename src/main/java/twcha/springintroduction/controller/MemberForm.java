@@ -1,4 +1,4 @@
-package twcha.h2project.controller;
+package twcha.springintroduction.controller;
 
 /*
 * Meber Class가 있는데, 왜 MemberForm을 하나 더 만들까?

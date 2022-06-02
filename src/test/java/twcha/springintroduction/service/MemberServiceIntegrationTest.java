@@ -1,12 +1,11 @@
-package twcha.h2project.service;
+package twcha.springintroduction.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
-import twcha.h2project.domain.Member;
-import twcha.h2project.repository.MemberRepository;
+import twcha.springintroduction.domain.Member;
+import twcha.springintroduction.repository.MemberRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;

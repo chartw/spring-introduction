@@ -1,5 +1,5 @@
-package twcha.h2project.repository;
-import twcha.h2project.domain.Member;
+package twcha.springintroduction.repository;
+import twcha.springintroduction.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import javax.sql.DataSource;
 import java.sql.*;

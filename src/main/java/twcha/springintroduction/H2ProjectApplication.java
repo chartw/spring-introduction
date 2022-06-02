@@ -1,4 +1,4 @@
-package twcha.h2project;
+package twcha.springintroduction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
