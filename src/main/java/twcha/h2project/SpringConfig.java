@@ -3,6 +3,7 @@ package twcha.h2project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import twcha.h2project.aop.TimeTraceAop;
 import twcha.h2project.repository.*;
 import twcha.h2project.service.MemberService;
 
@@ -47,8 +48,6 @@ public class SpringConfig {
 
         return new MemberService(memberRepository);
     }
-
-
 
 //    @Bean
 //    public MemberRepository memberRepository() {
