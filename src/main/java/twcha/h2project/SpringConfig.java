@@ -3,12 +3,10 @@ package twcha.h2project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import twcha.h2project.repository.JdbcMemberRepository;
-import twcha.h2project.repository.JdbcTemplateMemberRepository;
-import twcha.h2project.repository.MemberRepository;
-import twcha.h2project.repository.MemoryMemberRepository;
+import twcha.h2project.repository.*;
 import twcha.h2project.service.MemberService;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 /*
@@ -19,12 +17,20 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    DataSource dataSource;
+//    DI
+//    DataSource dataSource;
+//
+////    dataSource Error 무시해도 됨.
+//    @Autowired
+//    public SpringConfig(DataSource dataSource) {
+//        this.dataSource = dataSource;
+//    }
 
-//    dataSource Error 무시해도 됨.
+    private EntityManager em;
+
     @Autowired
-    public SpringConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public SpringConfig(EntityManager em) {
+        this.em = em;
     }
 
     @Bean
@@ -39,6 +45,7 @@ public class SpringConfig {
 //        return new MemoryMemberRepository();
 //        인터페이스를 활용하여 기존 코드를 변경하지 않고, db 교체 가능.
 //        return new JdbcMemberRepository(dataSource);
-        return new JdbcTemplateMemberRepository(dataSource);
+//        return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
     }
 }

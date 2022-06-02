@@ -6,9 +6,12 @@ import twcha.h2project.domain.Member;
 import twcha.h2project.repository.MemberRepository;
 import twcha.h2project.repository.MemoryMemberRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+// jpa를 쓰려면 항상 Service 계층에 Transactional이 있어야함.
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;

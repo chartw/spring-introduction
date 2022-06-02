@@ -1,7 +1,16 @@
 package twcha.h2project.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+// ORM : Object Realational database Mapping
+@Entity
 public class Member {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // identity 전략
     private Long id;
+
     private String name;
 
     public Long getId() {
