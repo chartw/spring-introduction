@@ -36,7 +36,7 @@ public class SpringConfig {
     public MemberRepository memberRepository() {
 
 //        return new MemoryMemberRepository();
-//        구현체를 활용하여 기존 코드를 변경하지 않고, db 교체 가능.
+//        인터페이스를 활용하여 기존 코드를 변경하지 않고, db 교체 가능.
         return new JdbcMemberRepository(dataSource);
     }
 }
